@@ -13,7 +13,8 @@ export const HomeScreen = () => {
 const style = StyleSheet.create({
     box : {
         width : "100%",
-        height : "100%"
+        height : "100%",
+        backgroundColor : "black"
     }
 })
 

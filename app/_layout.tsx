@@ -1,7 +1,28 @@
+import { useFonts } from 'expo-font';
 import { Stack } from "expo-router";
+import * as SplashScreen from 'expo-splash-screen';
+import { useEffect } from 'react';
 
 
+
+SplashScreen.preventAutoHideAsync();
 export default function RootLayout() {
+   const [loaded] = useFonts({
+    "Satoshi-Regular": require('../assets/fonts/Satoshi-Bold.ttf'),
+    "Satoshi-Medium": require('../assets/fonts/Satoshi-Medium.ttf'),
+    "Satoshi-Bold": require('../assets/fonts/Satoshi-Bold.ttf'),
+  });
+
+  useEffect(() => {
+    if (loaded) {
+      SplashScreen.hideAsync();
+    }
+  }, [loaded]);
+
+  if (!loaded) {
+    return null;
+  }
+
   return (
     <>
     <Stack>

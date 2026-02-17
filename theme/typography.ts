@@ -1,6 +1,22 @@
 export const typography = {
-  h1: { fontSize: 28, fontWeight: "700" },
-  h2: { fontSize: 22, fontWeight: "600" },
-  body: { fontSize: 16, fontWeight: "400" },
-  small: { fontSize: 14, fontWeight: "400" },
+  h1: {
+    fontSize: 28,
+    fontFamily: "Satoshi-Bold",
+  },
+  h2: {
+    fontSize: 22,
+    fontFamily: "Satoshi-Medium",
+  },
+  body: {
+    fontSize: 16,
+    fontFamily: "Satoshi-Regular",
+  },
+  small: {
+    fontSize: 14,
+    fontFamily: "Satoshi-Regular",
+  },
+  button: {
+    fontSize: 12,
+    fontFamily: "Satoshi-Medium",
+  },
 };

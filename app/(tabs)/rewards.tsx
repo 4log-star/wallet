@@ -1,9 +1,9 @@
 import { Text, View } from "react-native";
 
-export default function(){
+export default function Rewards(){
     return(
         <View>
-            <Text>what is trading</Text>
+            <Text>How muchare the rewards</Text>
         </View>
     )
 }

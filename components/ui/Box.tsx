@@ -4,11 +4,11 @@ import { useTheme } from "@/theme/ThemeProvider";
 import { View, ViewStyle } from "react-native";
 
 type props = {
-    padding ?: keyof AppTheme["spacing"],
-    background ?: keyof AppTheme['colors'],
-    radius ?: keyof AppTheme["radius"],
-    style ?: ViewStyle | ViewStyle[],
-    children ?: React.ReactNode,
+    padding?: keyof AppTheme["spacing"],
+    background?: keyof AppTheme['colors'],
+    radius?: keyof AppTheme["radius"],
+    style?: ViewStyle | ViewStyle[],
+    children?: React.ReactNode,
 }
 
 export const Box = ({
