@@ -1,34 +1,28 @@
 import { useFonts } from 'expo-font';
 import { Stack } from "expo-router";
-import * as SplashScreen from 'expo-splash-screen';
-import { useEffect } from 'react';
 
 
-
-SplashScreen.preventAutoHideAsync();
+// SplashScreen.preventAutoHideAsync();
 export default function RootLayout() {
-   const [loaded] = useFonts({
-    "Satoshi-Regular": require('../assets/fonts/Satoshi-Bold.ttf'),
-    "Satoshi-Medium": require('../assets/fonts/Satoshi-Medium.ttf'),
-    "Satoshi-Bold": require('../assets/fonts/Satoshi-Bold.ttf'),
+  const [loaded] = useFonts({
+    "SatoshiRegular": require('../assets/fonts/Satoshi-Regular.otf'),
+    "SatoshiMedium": require('../assets/fonts/Satoshi-Medium.otf'),
+    "SatoshiBold": require('../assets/fonts/Satoshi-Bold.otf'),
   });
 
-  useEffect(() => {
-    if (loaded) {
-      SplashScreen.hideAsync();
-    }
-  }, [loaded]);
+  // useEffect(() => {
+  //   if (loaded) {
+  //     SplashScreen.hideAsync();
+  //   }
+  // }, [loaded]);
 
   if (!loaded) {
     return null;
   }
 
   return (
-    <>
-    <Stack>
-      <Stack.Screen name="(tabs)" options={{headerShown : false}}/>
-      
+    <Stack screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="(tabs)" />
     </Stack>
-    </>
   );
 }

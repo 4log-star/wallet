@@ -1,4 +1,5 @@
-import { HomeScreen } from "@/features/auth/home/HomeScreen";
+import { HomeScreen } from "@/features/home/HomeScreen";
+
 
 
 export default function Home() {

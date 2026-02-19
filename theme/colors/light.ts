@@ -1,18 +1,23 @@
 export const lightColors = {
-  primary: "#6C5CE7",
-  primaryDark: "#5649C0",
+  // Brand
+  primary: "#7C3AED", // slightly deeper purple for contrast
+  primaryDark: "#6D28D9",
 
-  background: "#F9FAFB",
+  // Backgrounds
+  background: "#F5F7FB", // soft neutral gray-white
   surface: "#FFFFFF",
-  card: "#F3F4F6",
+  card: "#FFFFFF",
 
+  // Text
   textPrimary: "#111827",
   textSecondary: "#4B5563",
   textMuted: "#9CA3AF",
 
+  // Status
   success: "#16A34A",
   error: "#DC2626",
   warning: "#F59E0B",
 
+  // Borders
   border: "#E5E7EB",
 };

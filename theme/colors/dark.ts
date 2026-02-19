@@ -1,18 +1,23 @@
 export const darkColors = {
-  primary: "#6366F1",
-  primaryDark: "#5649C0",
+  // Brand
+  primary: "#8B5CF6", // rich modern purple
+  primaryDark: "#7C3AED", // pressed state
 
-  background: "#0F0F14",
-  surface: "#1A1B23",
-  card: "#22232E",
+  // Backgrounds
+  background: "#0B0F14", // deep blue-black
+  surface: "rgba(255,255,255,0.04)",
+  card: "rgba(255,255,255,0.06)",
 
+  // Text
   textPrimary: "#FFFFFF",
-  textSecondary: "#A1A1AA",
-  textMuted: "#6B7280",
+  textSecondary: "#C5C7D0",
+  textMuted: "#8A93A3",
 
+  // Status
   success: "#22C55E",
   error: "#EF4444",
   warning: "#F59E0B",
 
-  border: "#2E2F3A",
+  // Borders
+  border: "rgba(255,255,255,0.08)",
 };

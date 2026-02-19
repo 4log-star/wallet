@@ -1,22 +1,22 @@
 export const typography = {
   h1: {
     fontSize: 28,
-    fontFamily: "Satoshi-Bold",
+    fontFamily: "SatoshiBold",
   },
   h2: {
     fontSize: 22,
-    fontFamily: "Satoshi-Medium",
+    fontFamily: "SatoshiMedium",
   },
   body: {
     fontSize: 16,
-    fontFamily: "Satoshi-Regular",
+    fontFamily: "SatoshiRegular",
   },
   small: {
     fontSize: 14,
-    fontFamily: "Satoshi-Regular",
+    fontFamily: "SatoshiRegular",
   },
   button: {
     fontSize: 12,
-    fontFamily: "Satoshi-Medium",
+    fontFamily: "SatoshiBold",
   },
 };

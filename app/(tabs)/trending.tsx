@@ -1,9 +1,6 @@
-import { Text, View } from "react-native";
+import { TrendingScreen } from "@/features/trending/TrendingScreen";
 
-export default function Trending(){
-    return(
-        <View>
-            <Text>What is trending</Text>
-        </View>
-    )
+export default function Trending() {
+    return <TrendingScreen/>
+    
 }

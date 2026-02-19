@@ -15,21 +15,28 @@ export function CustomTabBar({ state, descriptors, navigation }: BottomTabBarPro
             bottom: 20,
             elevation: 5,
         },
-        tabContainer: {
-
-        },
         subcontainer: {
             width: "90%",
             backgroundColor: colors.card,
             borderRadius: 100,
             flexDirection: "row",
-            marginHorizontal: "auto",
+            // marginHorizontal: "auto",
             paddingVertical: 10,
             paddingHorizontal: 20,
             justifyContent: "space-around",
             alignItems: "center",
+            overflow: "visible",
+        },
 
-
+        tradeKey: {
+            marginTop: -40,
+            width: 64,
+            height: 64,
+            backgroundColor: colors.primaryDark,
+            borderRadius: 32,
+            color: colors.primaryDark,
+            justifyContent: "center",
+            alignItems: "center"
         },
 
         subTabContainer: {
@@ -37,7 +44,7 @@ export function CustomTabBar({ state, descriptors, navigation }: BottomTabBarPro
             flex: 1,
             justifyContent: "center",
             alignItems: "center",
-            paddingVertical: 1,
+            paddingVertical: 3,
             paddingHorizontal: 5,
 
         },
@@ -69,25 +76,49 @@ export function CustomTabBar({ state, descriptors, navigation }: BottomTabBarPro
                                 navigation.navigate(route.name)
                             }
                         }
-                        return (
-                            <Pressable key={route.key} onPress={onPress} style={[isFocused &&{ backgroundColor: colors.primary, borderRadius: radius.md }, styles.subTabContainer]}>
+                        return route.name === 'trade' ?
+                            (
+                                <View key={route.key} style={[styles.subTabContainer, isFocused && {
+                                    shadowColor: "#000",
+                                    shadowOffset: { width: 0, height: 4 },
+                                    shadowOpacity: 0.3,
+                                    shadowRadius: 6,
+                                }]}>
+                                    <Pressable onPress={onPress} style={styles.tradeKey}>
+                                        {
+                                            options.tabBarIcon?.({
+                                                focused: isFocused,
+                                                color: colors.textPrimary,
+                                                size: 26,
+                                            })
+                                        }
+                                    </Pressable>
+                                    <Text style={[{ color: isFocused ? colors.textPrimary : colors.textMuted }, styles.text,]}>
+
+                                        {label}
+                                    </Text>
+                                </View>)
+                            :
+                            (<Pressable key={route.key} onPress={onPress} style={[isFocused && { backgroundColor: colors.primary, borderRadius: radius.md }, styles.subTabContainer]}>
 
                                 {
                                     options.tabBarIcon?.({
                                         focused: isFocused,
 
                                         color: isFocused ? colors.primaryDark : colors.textMuted,
-                                        size: 24
+                                        size: 26
                                     })
                                 }
-                                <Text style={[{ color: isFocused ? colors.textPrimary : colors.textMuted }, styles.text]}>
+                                <Text style={[{ color: isFocused ? colors.textPrimary : colors.textMuted }, styles.text,]}>
 
                                     {label}
                                 </Text>
 
                             </Pressable>
-                        )
-                    })
+
+                            )
+                    }
+                    )
                 }
 
             </View>
