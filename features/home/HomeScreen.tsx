@@ -14,6 +14,7 @@ export const HomeScreen = () => {
     const { colors, spacing, radius, typography } = useTheme();
     return (
         <SafeAreaView style={[style?.box, { backgroundColor: colors.background }]} >
+        
             <HomeHeader />
             <BalanceCard />
             <QuickActions />
