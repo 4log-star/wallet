@@ -20,10 +20,10 @@ export function HomeHeader() {
                 {/* <Ionicons name="arrow-" color={"#ffff"} size={24} /> */}
             </Pressable>
             <View style={styles.section2}>
-                <Pressable>
+                <Pressable onPress={()=>router.push("/receive")}>
                     <Ionicons name="copy" color={colors.textSecondary} size={24} />
                 </Pressable>
-                <Pressable>
+                <Pressable onPress={()=>router.push("/scan")}>
                     <Ionicons name="scan" color={colors.textSecondary} size={24} />
                 </Pressable>
                 <Pressable>

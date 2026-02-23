@@ -1,15 +1,20 @@
-import { ScreenContainer } from "@/components/layouts/ScreenContainer";
-import { Box } from "@/components/ui/Box";
 import { useTheme } from "@/theme/ThemeProvider";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { router } from "expo-router";
+import { ReactNode } from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { AddWallet } from "./components/AddWallet";
-import { WalletSection } from "./components/WalletSection";
+import { Box } from "../ui/Box";
+import { ScreenContainer } from "./ScreenContainer";
 
-export function WalletScreen() {
-    const { colors, spacing, radius, typography } = useTheme();
+type Props = {
+    title: string;
+    children?: ReactNode
+}
+
+export function TransactinLayout({ title, children }: Props) {
+    const { spacing, colors, typography } = useTheme();
+
     return (
         <SafeAreaView style={[styles.container, { backgroundColor: colors.background }]}>
             <ScreenContainer>
@@ -17,19 +22,12 @@ export function WalletScreen() {
                     <Pressable onPress={() => router.back()}>
                         <Ionicons name="arrow-back" color={colors.textMuted} size={26} />
                     </Pressable>
-                    <Text style={{ color: colors.textPrimary, fontSize: typography.h2.fontSize }}>Wallets</Text>
-                    <View style={styles.rightSection}>
-                        <Pressable>
-                            <Ionicons name="notifications" color={colors.textMuted} size={24} />
-                        </Pressable>
-                        <Pressable>
-                            <Ionicons name="settings" color={colors.textMuted} size={24} />
-                        </Pressable>
-                    </View>
+                    <Text style={{ color: colors.textPrimary, fontSize: typography.h2.fontSize }}>{title}</Text>
+                    <View style={styles.rightSection}/>
                 </Box>
-                <WalletSection />
+                    {children}
             </ScreenContainer>
-            <AddWallet />
+ 
         </SafeAreaView>
     )
 }
